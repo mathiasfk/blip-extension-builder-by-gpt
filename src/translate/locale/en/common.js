@@ -1,6 +1,6 @@
 const translations = {
     title: {
-        homePage: 'Plugins Template',
+        homePage: 'Builder by GPT',
         exemples: 'Examples',
         systemInfo: 'System info',
         userInfo: 'User info'

@@ -5,8 +5,8 @@ import RoutesPath from '../../constants/routes-path';
 
 import settings from '../../config';
 
-import logo from '../../assets/images/svg/blip-balloon.svg';
 import Header from './components/Header';
+import Button from '../../components/Button';
 
 const PAGE_ICON = 'plugin';
 const BLANK = '_blank';
@@ -30,7 +30,13 @@ const Home = () => {
                 onClick={() => window.open(settings.repositoryUrl, BLANK)}
             />
             <div className="flex flex-column items-center justify-center bp-c-neutral-dark-city f5 h-100 mt4">
-                <img src={logo} className="App-logo" alt="logo" />
+                <textarea style={{ width: 500, height: 200}} placeholder='Um chatbot que pergunte ao cliente o seu nome e CPF, depois encaminhe para atendimento humano'/>
+                <br />
+                <Button 
+                    text="Gerar chatbot"
+                    variant="primary"
+                    onClick={() => alert("OK")}
+                />
                 <p className="tc">
                     {t('paragraph.homeDescription.part1')}
                     <br />

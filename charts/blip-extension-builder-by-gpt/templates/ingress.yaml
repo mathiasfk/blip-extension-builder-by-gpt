@@ -1,12 +1,12 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "PLUGIN_NAME.fullname" . -}}
+{{- $fullName := include "blip-extension-builder-by-gpt.fullname" . -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ template "PLUGIN_NAME.fullname" . }}-{{ .Values.environment.stage }}
+  name: {{ template "blip-extension-builder-by-gpt.fullname" . }}-{{ .Values.environment.stage }}
   labels:
-    app: {{ template "PLUGIN_NAME.name" . }}
-    chart: {{ template "PLUGIN_NAME.chart" . }}
+    app: {{ template "blip-extension-builder-by-gpt.name" . }}
+    chart: {{ template "blip-extension-builder-by-gpt.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 {{- with .Values.ingress.annotations }}
@@ -25,7 +25,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: {{ template "PLUGIN_NAME.fullname" . }}-{{ .Values.environment.stage }}
+                name: {{ template "blip-extension-builder-by-gpt.fullname" . }}-{{ .Values.environment.stage }}
                 port:
                   name: http
   tls: 

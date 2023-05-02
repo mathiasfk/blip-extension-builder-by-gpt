@@ -1,9 +1,9 @@
-# Default values for PLUGIN_NAME.
+# Default values for blip-extension-builder-by-gpt.
 # Declare variables to be passed into your templates.
-fullnameOverride: PLUGIN_NAME
+fullnameOverride: blip-extension-builder-by-gpt
 replicaCount: 1
 image:
-    repository: PLUGIN_NAME
+    repository: blip-extension-builder-by-gpt
     tag: #{Build.BuildId}#
     pullPolicy: IfNotPresent
     imagePullSecretName: acr-takeprivate-secret
@@ -43,7 +43,7 @@ environment:
     stage: staging
 
 appSettings:
-    configMap: PLUGIN_NAME
+    configMap: blip-extension-builder-by-gpt
     path: /app/src/config/appsettings.json
     subPath: appsettings.json
 

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "PLUGIN_NAME.fullname" . }}-{{ .Values.environment.stage }}
+  name: {{ template "blip-extension-builder-by-gpt.fullname" . }}-{{ .Values.environment.stage }}
   labels:
-    app: {{ template "PLUGIN_NAME.name" . }}
-    chart: {{ template "PLUGIN_NAME.chart" . }}
+    app: {{ template "blip-extension-builder-by-gpt.name" . }}
+    chart: {{ template "blip-extension-builder-by-gpt.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ template "PLUGIN_NAME.name" . }}
+    app: {{ template "blip-extension-builder-by-gpt.name" . }}
     release: {{ .Release.Name }}

@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "PLUGIN_NAME.fullname" . }}-{{ .Values.environment.stage }}
+  name: {{ template "blip-extension-builder-by-gpt.fullname" . }}-{{ .Values.environment.stage }}
   labels:
-    app: {{ template "PLUGIN_NAME.name" . }}
-    chart: {{ template "PLUGIN_NAME.chart" . }}
+    app: {{ template "blip-extension-builder-by-gpt.name" . }}
+    chart: {{ template "blip-extension-builder-by-gpt.chart" . }}
     draft: {{ default "draft-app" .Values.draft }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -17,12 +17,12 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "PLUGIN_NAME.name" . }}
+      app: {{ template "blip-extension-builder-by-gpt.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "PLUGIN_NAME.name" . }}
+        app: {{ template "blip-extension-builder-by-gpt.name" . }}
         draft: {{ default "draft-app" .Values.draft }}
         release: {{ .Release.Name }}
         team: {{ .Values.team }}
@@ -66,7 +66,7 @@ spec:
             - name: {{ $ref }}_{{ $key }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "PLUGIN_NAME.fullname" $root }}-{{ $ref | lower }}
+                  name: {{ template "blip-extension-builder-by-gpt.fullname" $root }}-{{ $ref | lower }}
                   key: {{ $key }}
             {{- end }}
             {{- end }}
