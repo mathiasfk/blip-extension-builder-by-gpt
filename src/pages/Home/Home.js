@@ -19,9 +19,9 @@ const BLANK = '_blank';
 const placeholder = 'Um chatbot que mostre uma FAQ com perguntas sobre carros';
 
 
-const exampleJson = examples.pizzaByGpt;
+const exampleJson = examples.pizzaByGptClone;
 
-const systemMessage = `Você é um assistente de IA que cria chatbots. Deve conter no mínimo os blocos onboarding, welcome e fallback. Cada ID deve ser um GUID único. Responda apenas com um JSON válido, conforme o exemplo: ${JSON.stringify(exampleJson)}`;
+const systemMessage = `Você é um assistente de IA que cria chatbots. A resposta deve conter no mínimo os blocos onboarding, welcome e fallback. Cada ID deve ser um GUID único. Cada bloco deve no máximo um input do usuário. Responda apenas com um JSON válido, conforme o exemplo: ${JSON.stringify(exampleJson)}`;
 const apiKey = process.env.REACT_APP_API_KEY;
 
 const Home = () => {
